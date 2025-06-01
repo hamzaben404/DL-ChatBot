@@ -1,0 +1,212 @@
+{
+  "Q1": {
+    "question": "What is backpropagation in a multilayer perceptron?",
+    "retrieved": [
+      {
+        "passage_id": "DeepLearning1-0039b4d5-f865",
+        "score": 0.5296068787574768,
+        "section": "unknown",
+        "excerpt": "• Fonction d′activation (f) : Introduit une non-linéarité et détermine si le neurone doit être activé ou non Deep Learning Apprentissage 7  Algorithme d'Apprentissage du Perceptron Principe de Fonctio"
+      },
+      {
+        "passage_id": "DeepLearning1-8e368b78-495b",
+        "score": 0.5208085179328918,
+        "section": "unknown",
+        "excerpt": "Deep Learning Apprentissage Apprentissage neuronal profond 2IA, ENSIAS Pr.Raddouane chiheb Mme.hanaa EL Afia  Partie 1: Multi-Layer Perceptron (MLP) Deep Learning Apprentissage 2  Plan"
+      },
+      {
+        "passage_id": "DeepLearning1-2f9c56bc-cb2d",
+        "score": 0.5106089115142822,
+        "section": "unknown",
+        "excerpt": "• Consommation énergétique : L'entraînement de modèles de grande taille peut être énergivore. Deep Learning Apprentissage 6  Le Perceptron Simple Structure d'un neurone artificiel Le perceptron simple"
+      },
+      {
+        "passage_id": "DeepLearning1-aa77bc5e-8361",
+        "score": 0.4764121174812317,
+        "section": "unknown",
+        "excerpt": "• Introduction aux Réseaux de Neurones • Le Perceptron Simple • Le Perceptron Multicouche (MLP) • Apprentissage et Optimisation • Évaluation et Performances du MLP Deep Learning Apprentissage 3  Intro"
+      },
+      {
+        "passage_id": "DeepLearning1-85986ea1-0364",
+        "score": 0.454111248254776,
+        "section": "Architecture",
+        "excerpt": "artificiels, en particulier dans les Perceptrons Multicouches (MLP). Elles permettent au réseau de modéliser des relations complexes et non linéaires. Principaux Rôles des Fonctions d'Activation:"
+      }
+    ]
+  },
+  "Q2": {
+    "question": "How do you initialize weights and biases in an MLP?",
+    "retrieved": [
+      {
+        "passage_id": "TD1-3f90ca49-0e6e",
+        "score": 0.4952922463417053,
+        "section": "Architecture",
+        "excerpt": "Architecture du MLP"
+      },
+      {
+        "passage_id": "DeepLearning1-85766d89-6e22",
+        "score": 0.37438392639160156,
+        "section": "Architecture",
+        "excerpt": "• θ: Poids et biais. • η: Taux d'apprentissage (learning rate). • ∇ θLθ: Gradient de la perte. Optimisation Deep Learning Apprentissage 36  Variantes :"
+      },
+      {
+        "passage_id": "DeepLearning1-608ab7a5-8540",
+        "score": 0.35309886932373047,
+        "section": "Architecture",
+        "excerpt": "• Batch Gradient Descent : Calcul avec tout le dataset. • Stochastic Gradient Descent (SGD) : Mise à jour à chaque exemple. • Mini-Batch Gradient Descent : Mise à jour par petit lot d'exemples.  Algor"
+      },
+      {
+        "passage_id": "DeepLearning1-0039b4d5-f865",
+        "score": 0.34897851943969727,
+        "section": "unknown",
+        "excerpt": "• Fonction d′activation (f) : Introduit une non-linéarité et détermine si le neurone doit être activé ou non Deep Learning Apprentissage 7  Algorithme d'Apprentissage du Perceptron Principe de Fonctio"
+      },
+      {
+        "passage_id": "DeepLearning1-8e368b78-495b",
+        "score": 0.33400630950927734,
+        "section": "unknown",
+        "excerpt": "Deep Learning Apprentissage Apprentissage neuronal profond 2IA, ENSIAS Pr.Raddouane chiheb Mme.hanaa EL Afia  Partie 1: Multi-Layer Perceptron (MLP) Deep Learning Apprentissage 2  Plan"
+      }
+    ]
+  },
+  "Q3": {
+    "question": "Explain the forward pass in a neural network.",
+    "retrieved": [
+      {
+        "passage_id": "DeepLearning1-0039b4d5-f865",
+        "score": 0.4612652659416199,
+        "section": "unknown",
+        "excerpt": "• Fonction d′activation (f) : Introduit une non-linéarité et détermine si le neurone doit être activé ou non Deep Learning Apprentissage 7  Algorithme d'Apprentissage du Perceptron Principe de Fonctio"
+      },
+      {
+        "passage_id": "DeepLearning1-46141ec0-621d",
+        "score": 0.425629585981369,
+        "section": "Architecture",
+        "excerpt": "• Produit la prédiction finale. • Nombre de neurones : Dépend du problème. • Classification binaire → 1 neurone (Sigmoïde). • Classification multiclasse → K neurones (Softmax). • Régression → 1 neuron"
+      },
+      {
+        "passage_id": "DeepLearning1-2f9c56bc-cb2d",
+        "score": 0.4194002151489258,
+        "section": "unknown",
+        "excerpt": "• Consommation énergétique : L'entraînement de modèles de grande taille peut être énergivore. Deep Learning Apprentissage 6  Le Perceptron Simple Structure d'un neurone artificiel Le perceptron simple"
+      },
+      {
+        "passage_id": "DeepLearning1-339936eb-e923",
+        "score": 0.41431620717048645,
+        "section": "Architecture",
+        "excerpt": "•La propagation avant calcule la sortie du réseau. •La propagation arrière calcule comment ajuster les poids pour réduire l'erreur. •La descente de gradient met à jour les paramètres pour améliorer le"
+      },
+      {
+        "passage_id": "DeepLearning1-7534a7e9-109e",
+        "score": 0.4048599302768707,
+        "section": "Architecture",
+        "excerpt": "• Formule: Z(l) = W(l)A(l−1) + bl Al= fzl Deep Learning Apprentissage 14  Couche de sortie (Output Layer):"
+      }
+    ]
+  },
+  "Q4": {
+    "question": "What is the role of the sigmoid activation function?",
+    "retrieved": [
+      {
+        "passage_id": "DeepLearning1-aabe9056-547c",
+        "score": 0.5547217130661011,
+        "section": "Architecture",
+        "excerpt": "• Poids W= [1.2, −0.8] • Biais b= 0.5 • Entrée X= [2,3] Étape 1 : Calcul de la somme pondérée: z= (1.2 × 2) + (−0.8 × 3) + 0.5 = 2.4 −2.4 + 0.5 = 0.5 Étape 2 : Application de la fonction sigmoïde σ(0."
+      },
+      {
+        "passage_id": "DeepLearning1-1d9f1428-a295",
+        "score": 0.4911774694919586,
+        "section": "Architecture",
+        "excerpt": "• Introduire de la Non-linéarité • Adapter la Sortie aux Problèmes Spécifiques • Optimiser la Convergence de l'Apprentissage • Considérations sur le Temps de Calcul Deep Learning Apprentissage 19  Fon"
+      },
+      {
+        "passage_id": "DeepLearning1-0039b4d5-f865",
+        "score": 0.47786667943000793,
+        "section": "unknown",
+        "excerpt": "• Fonction d′activation (f) : Introduit une non-linéarité et détermine si le neurone doit être activé ou non Deep Learning Apprentissage 7  Algorithme d'Apprentissage du Perceptron Principe de Fonctio"
+      },
+      {
+        "passage_id": "DeepLearning1-0cfdf65e-29db",
+        "score": 0.453792005777359,
+        "section": "Architecture",
+        "excerpt": "• Poids W= [0.5, −1] • Biais b= 0.2 • Entrée X= [1,2] Étape 1 : Calcul de la somme pondérée: z= 0.5 × 2 + −1 × 3 + 0.2 = −1.3. Étape 2 : Application de la fonction  Tanh tanh −1.3 ≈−0.861 La sortie du"
+      },
+      {
+        "passage_id": "DeepLearning1-46141ec0-621d",
+        "score": 0.4509102702140808,
+        "section": "Architecture",
+        "excerpt": "• Produit la prédiction finale. • Nombre de neurones : Dépend du problème. • Classification binaire → 1 neurone (Sigmoïde). • Classification multiclasse → K neurones (Softmax). • Régression → 1 neuron"
+      }
+    ]
+  },
+  "Q5": {
+    "question": "How is Mean Squared Error computed?",
+    "retrieved": [
+      {
+        "passage_id": "DeepLearning1-7f378b36-e887",
+        "score": 0.2711309492588043,
+        "section": "Architecture",
+        "excerpt": "• Mesure de la Performance du Modèle • Guide l'Optimisation du Modèle • Influence sur la Vitesse et la Qualité de l'Apprentissage Deep Learning Apprentissage 26  Types de Fonctions de Perte selon les "
+      },
+      {
+        "passage_id": "DeepLearning1-1fadbadf-0f82",
+        "score": 0.24319541454315186,
+        "section": "unknown",
+        "excerpt": "• Si  ​ ෝyi≠ yi(mauvaise prédiction) : W= W+ η⋅yi⋅xi b = b+ η⋅yi"
+      },
+      {
+        "passage_id": "Td1_correction-06fcbc77-6835",
+        "score": 0.1976325362920761,
+        "section": "unknown",
+        "excerpt": "1+0.97 = 1 1.97 ≈0.507 Donc a(1) = 0.596 0.507  1.2 Calcul de la sortie finale : z(2) = W(2)a(1) + b(2) z(2) =  0.5 −0.6  0.596 0.507  + (−0.1) z(2) = 0.5 × 0.596 + (−0.6) × 0.507 + (−0.1) z(2) = 0.29"
+      },
+      {
+        "passage_id": "DeepLearning1-2468c67c-c3ab",
+        "score": 0.1942216157913208,
+        "section": "Objectif",
+        "excerpt": "• MAE (Erreur Absolue Moyenne) • R2 (Coefficient de Détermination) Classification Binaire : Précision, Rappel et F1-Score : Exemples des formules pour la classe positive (y= 1) Classification Multicla"
+      },
+      {
+        "passage_id": "DeepLearning1-608ab7a5-8540",
+        "score": 0.1599271148443222,
+        "section": "Architecture",
+        "excerpt": "• Batch Gradient Descent : Calcul avec tout le dataset. • Stochastic Gradient Descent (SGD) : Mise à jour à chaque exemple. • Mini-Batch Gradient Descent : Mise à jour par petit lot d'exemples.  Algor"
+      }
+    ]
+  },
+  "Q6": {
+    "question": "Describe gradient descent for training neural networks.",
+    "retrieved": [
+      {
+        "passage_id": "DeepLearning1-608ab7a5-8540",
+        "score": 0.6494991183280945,
+        "section": "Architecture",
+        "excerpt": "• Batch Gradient Descent : Calcul avec tout le dataset. • Stochastic Gradient Descent (SGD) : Mise à jour à chaque exemple. • Mini-Batch Gradient Descent : Mise à jour par petit lot d'exemples.  Algor"
+      },
+      {
+        "passage_id": "DeepLearning1-85766d89-6e22",
+        "score": 0.5397930145263672,
+        "section": "Architecture",
+        "excerpt": "• θ: Poids et biais. • η: Taux d'apprentissage (learning rate). • ∇ θLθ: Gradient de la perte. Optimisation Deep Learning Apprentissage 36  Variantes :"
+      },
+      {
+        "passage_id": "DeepLearning1-339936eb-e923",
+        "score": 0.49536094069480896,
+        "section": "Architecture",
+        "excerpt": "•La propagation avant calcule la sortie du réseau. •La propagation arrière calcule comment ajuster les poids pour réduire l'erreur. •La descente de gradient met à jour les paramètres pour améliorer le"
+      },
+      {
+        "passage_id": "DeepLearning1-1e65dac6-abf4",
+        "score": 0.4909108281135559,
+        "section": "Objectif",
+        "excerpt": "• Taille et Nombre des Couches Cachées • Fonction d'Activation • Taux d'Apprentissage (Learning Rate) • Taille de Batch (Batch Size) • Nombre d'Époques • Méthode de Régularisation Hyperparamètres Deep"
+      },
+      {
+        "passage_id": "DeepLearning1-2702d639-eb1d",
+        "score": 0.46371591091156006,
+        "section": "Architecture",
+        "excerpt": "• Momentum : Accélère la convergence en ajoutant un terme de vitesse. • RMSProp : Ajuste le taux d'apprentissage pour chaque paramètre. • Adam : Combine Momentum et RMSProp, adaptatif et rapide. Deep "
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+# configs/embedding_config.yaml
+model:
+  text_encoder: sentence-transformers/all-MiniLM-L6-v2
+  code_encoder: microsoft/codebert-base
+batch_size: 256
+device: cpu        # or 'cuda' if you have a GPU
+paths:
+  master_sqlite: corpus/processed/master_metadata.sqlite
+  embeddings_dir: corpus/processed/embeddings
+  text_embeddings_file: text_embeddings.npy
+  code_embeddings_file: code_embeddings.npy
+  indexes_dir: corpus/processed/indexes
+  text_index_file: text_index.faiss
+  code_index_file: code_index.faiss

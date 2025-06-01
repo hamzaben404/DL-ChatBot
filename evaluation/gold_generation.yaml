@@ -1,0 +1,22 @@
+# ===== File: evaluation/gold_generation.yaml =====
+# Minimal gold answers for generation (exact-match evaluation)
+-
+  id: Q1
+  question: "What is backpropagation in a multilayer perceptron?"
+  reference: "Backpropagation is the algorithm that computes gradients via the chain rule and updates weights in an MLP."
+-
+  id: Q2
+  question: "How do you initialize weights and biases in an MLP?"
+  reference: "Weights and biases are often initialized randomly or with Xavier initialization to break symmetry."
+-
+  id: Q3
+  question: "Explain the forward pass in a neural network."
+  reference: "The forward pass computes each layer's output by applying weights and activations from input to output."
+-
+  id: Q4
+  question: "What is the role of the sigmoid activation function?"
+  reference: "The sigmoid activation function introduces nonlinearity and maps values between 0 and 1 for binary classification."
+-
+  id: Q5
+  question: "How is Mean Squared Error computed?"
+  reference: "Mean Squared Error is computed as the average of the squared differences between predicted and actual values."

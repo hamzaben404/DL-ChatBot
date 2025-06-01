@@ -1,0 +1,84 @@
+Rapport - R´egression de l’Esp´erance de Vie avec un MLP
+Benatmane hamza
+9 f´evrier 2025
+1. Jeu de Donn´ees
+— Nom : Life Expectancy Data (OMS).
+— Objectif : Pr´edire l’esp´erance de vie en fonction de 20 variables socio-´economiques et
+sanitaires.
+— Taille : 2 938 ´echantillons.
+— Caract´eristiques cl´es :
+— Variables num´eriques : Adult Mortality, GDP, Schooling.
+— Variables cat´egorielles : Country, Status.
+— D´efis :
+— Valeurs manquantes : Jusqu’`a 30% dans certaines colonnes (ex : Hepatitis B).
+— Outliers : Pr´esents dans des variables comme Population ou Measles.
+2. Probl´ematiques
+— Relations non lin´eaires : Liens complexes entre des variables comme Income composition
+of resources et la cible.
+— Surapprentissage : Risque ´elev´e dˆu au nombre ´elev´e de caract´eristiques (20) et `a la
+pr´esence de bruit.
+— Pr´etraitement : N´ecessit´e de normaliser les donn´ees et d’encoder les variables cat´egorielles
+(Country, Status).
+3. Architecture du MLP
+Couche
+D´etails
+Input
+21 neurones (correspondant aux caract´eristiques).
+Cach´ee 1
+128 neurones, activation ReLU, r´egularisation L2 (λ = 0.01), Dropout (30%).
+Cach´ee 2
+64 neurones, activation ReLU, r´egularisation L2 (λ = 0.01), Dropout (20%).
+Sortie
+1 neurone, activation lin´eaire.
+Table 1 – Architecture du MLP
+Justifications
+— ReLU : Efficace pour ´eviter le vanishing gradient et capturer des relations non lin´eaires.
+— Dropout : R´eduit le surapprentissage en d´esactivant al´eatoirement des neurones.
+— L2 : P´enalise les poids ´elev´es pour simplifier le mod`ele.
+1
+
+4. Techniques de R´egularisation
+— Dropout : Taux de 30% (1`ere couche) et 20% (2`eme couche).
+— R´egularisation L2 : Coefficient λ = 0.01 appliqu´e aux poids des couches cach´ees.
+— Early Stopping : Surveillance de la loss de validation avec une patience de 15 epochs.
+5. R´esultats
+M´etrique
+Performance
+R²
+0.85
+MAE
+3.2 ann´ees
+MSE
+18.4
+Table 2 – Performances du mod`ele
+Visualisations
+— Courbes d’apprentissage :
+— Convergence stable de la loss (train et validation).
+— Early stopping d´eclench´e `a 53 epochs.
+— Pr´edictions vs R´eelles :
+6. Analyse Critique
+Points Forts
+— Performance ´elev´ee (R² = 0.8) malgr´e la complexit´e des donn´ees.
+2
+
+— Techniques de r´egularisation efficaces (Dropout + L2 r´eduisent le surapprentissage de
+15%).
+Limites
+— Sensibilit´e aux outliers r´esiduels dans Population.
+— Temps d’entraˆınement ´elev´e (53 epochs).
+7. Pistes d’Am´elioration
+— Optimisation des Hyperparam`etres :
+— Utiliser une GridSearch pour tester diff´erentes combinaisons de couches/neurones.
+— Ajuster le taux d’apprentissage de l’optimiseur Adam.
+— Traitement des Donn´ees :
+— Appliquer une transformation log aux variables tr`es asym´etriques (ex : GDP).
+— Architecture :
+— Tester des r´eseaux plus profonds (ex : 5 couches) avec des connexions r´esiduelles.
+— Techniques Avanc´ees :
+— Utiliser la validation crois´ee pour une ´evaluation plus robuste.
+8. Conclusion
+Le MLP d´evelopp´e d´emontre une capacit´e solide `a pr´edire l’esp´erance de vie avec un R² de
+0.85. Les techniques de r´egularisation ont permis de contrˆoler efficacement le surapprentissage.
+Des am´eliorations potentielles incluent l’optimisation des hyperparam`etres et un pr´etraitement
+plus approfondi des donn´ees.
+3

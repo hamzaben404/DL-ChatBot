@@ -1,0 +1,23 @@
+# ===== File: evaluation/gold_retrieval.yaml =====
+# Minimal gold set: question and corresponding gold passage_id
+# (Populate passage_id from your master_metadata)
+-
+  id: Q1
+  question: "What is backpropagation in a multilayer perceptron?"
+  gold_passage_id: "DeepLearning1-339936eb-e923"
+-
+  id: Q2
+  question: "How do you initialize weights and biases in an MLP?"
+  gold_passage_id: "TD1-3f90ca49-0e6e"
+-
+  id: Q3
+  question: "Explain the forward pass in a neural network."
+  gold_passage_id: "DeepLearning1-46141ec0-621d"
+-
+  id: Q4
+  question: "What is the role of the sigmoid activation function?"
+  gold_passage_id: "DeepLearning1-aabe9056-547c"
+-
+  id: Q5
+  question: "How is Mean Squared Error computed?"
+  gold_passage_id: "DeepLearning1-7f378b36-e887"

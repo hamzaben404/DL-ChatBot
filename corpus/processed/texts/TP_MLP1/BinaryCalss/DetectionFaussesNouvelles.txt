@@ -1,0 +1,58 @@
+Rapport Synth´etique : D´etection de Fausses
+Nouvelles par Apprentissage Profond
+Benatmane Hamza
+1
+Donn´ees et Probl´ematique
+1.1
+Jeu de Donn´ees
+• Source : Dataset de d´etection de fausses nouvelles
+• Volume : 44,898 articles (23,481 faux, 21,417 vrais)
+• Distribution : Relativement ´equilibr´ee (52.3% faux, 47.7% vrais)
+• Caract´eristiques : Textes d’actualit´es de longueurs variables (moyenne
+∼2,500 caract´eres)
+1.2
+Probl´ematique
+D´eveloppement d’un syst`eme de classification binaire capable de distinguer les
+vraies des fausses nouvelles en utilisant un r´eseau de neurones multicouche
+(MLP).
+2
+M´ethodologie
+2.1
+Pr´etraitement des Donn´ees
+• Nettoyage du texte : suppression des URLs, caract`eres sp´eciaux, chiffres
+• Normalisation : mise en minuscules, lemmatisation
+• Vectorisation : TF-IDF avec 5,000 caract´eristiques
+• Division des donn´ees : 60% entraˆınement, 20% validation, 20% test
+2.2
+Architecture du Mod`ele
+• R´eseau multicouche profond :
+– Couche d’entr´ee : 5,000 neurones (dimensions TF-IDF)
+– Couches cach´ees : 512 →256 →64 neurones
+1
+
+– Couche de sortie : 1 neurone (sigmoid)
+• Techniques de r´egularisation :
+– Dropout (0.3, 0.2, 0.1)
+– Batch Normalization
+– Early Stopping
+3
+R´esultats et Analyse
+Figure 1: Performances du mod`ele
+4
+Pistes d’Am´elioration
+4.1
+Am´eliorations Potentielles
+1. Pr´etraitement
+• Utilisation de techniques de data augmentation
+• Exploration d’autres m´ethodes de vectorisation (Word2Vec, BERT)
+2. Entraˆınement
+• Impl´ementation de techniques d’apprentissage par transfert
+• Utilisation de techniques d’ensemble
+5
+Conclusion
+Le mod`ele d´evelopp´e montre des performances prometteuses pour la d´etection de
+fausses nouvelles. Les techniques de r´egularisation et l’architecture choisie per-
+mettent une bonne g´en´eralisation, mais il existe encore des pistes d’am´elioration
+significatives, notamment dans l’utilisation de mod`eles plus avanc´es et de tech-
+niques de traitement du langage naturel plus sophistiqu´ees.
+2

@@ -1,0 +1,62 @@
+Rapport : Classification Multiclasse avec MLP
+sur MNIST
+Benatmane Hamza
+9 février 2025
+1
+Introduction
+1.1
+Jeu de données
+Le dataset MNIST contient 70 000 images en niveaux de gris (28x28
+pixels) de chiffres manuscrits (0 à 9). Ce dataset est un benchmark classique
+pour la classification multiclasse.
+1.2
+Problématique
+Conception d’un perceptron multicouche (MLP) capable de classifier ces
+chiffres avec une haute précision tout en contrôlant le surapprentissage.
+2
+Méthodologie
+2.1
+Architecture du MLP
+— Couche d’entrée : 784 neurones (vectorisation des images)
+— Couches cachées :
+— Couche 1 : 128 neurones (ReLU) + Dropout (30%) + L2 (=0.001)
+— Couche 2 : 64 neurones (ReLU) + Dropout (30%) + L2 (=0.001)
+— Couche de sortie : 10 neurones (Softmax)
+2.2
+Entraînement
+— Division des données :
+— Entraînement : 48 000 images (80%)
+— Validation : 12 000 images (20%)
+1
+
+— Test : 10 000 images
+— Paramètres : 30 époques, batch size = 64, Early Stopping (patience=3)
+3
+Résultats
+3.1
+Performances
+— Précision validation : 97.15% (meilleure époque)
+— Précision test : 97.22%
+3.2
+Visualisations
+Figure 1 – Courbes d’accuracy pendant l’entraînement
+Figure 2 – Matrice de confusion (exemples mal classés : 9↔4, 5↔3)
+2
+
+4
+Discussion
+4.1
+Points forts
+— Bonne généralisation grâce au Dropout + L2
+— Convergence stable (écart train/validation < 1%)
+4.2
+Améliorations possibles
+— Augmentation des données (rotations/déformations)
+— Réglage fin des hyperparamètres
+— Ajout de Batch Normalization
+5
+Conclusion
+Le modèle final atteint 97.22% de précision sur le jeu de test. Les tech-
+niques de régularisation se sont avérées efficaces pour limiter le surappren-
+tissage.
+3

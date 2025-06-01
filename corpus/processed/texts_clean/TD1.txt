@@ -1,0 +1,52 @@
+Propagation Avant et R ́etropropagation dans un
+MLP Binaire
+February 10, 2025
+1
+Introduction
+Nous consid ́erons un r ́eseau de neurones multicouche (MLP) entraˆın ́e pour un
+problème de classification binaire.
+2
+Architecture du MLP
+• Entr ́ee : 2 neurones
+• Couche cach ́ee : 2 neurones avec fonction d'activation sigmo ̈ıde
+• Couche de sortie : 1 neurone avec activation sigmo ̈ıde
+• Fonction de perte : Entropie crois ́ee binaire
+Les poids et biais du r ́eseau sont initialis ́es comme suit :
+W (1) =
+
+0.2
+−0.3
+0.4
+0.1
+
+,
+b(1) =
+
+0.1
+−0.2
+
+W (2) =
+
+0.5
+−0.6
+
+,
+b(2) = −0.1
+3
+Donn ́ees d'Entr ́ee et Sortie Attendue
+X =
+ 0.7
+−0.5
+
+,
+y = 1
+4
+Travail demand ́e
+1. Effectuer la propagation avant (Forward Pass) jusqu'`a la sortie finale.
+2. Calculer la fonction de perte (Entropie crois ́ee binaire).
+1
+
+3. Effectuer la r ́etropropagation (Backward Pass) et calculer les gradients des
+poids et biais.
+4. Mettre `a jour les poids et biais avec la descente de gradient (α = 0.01).
+2

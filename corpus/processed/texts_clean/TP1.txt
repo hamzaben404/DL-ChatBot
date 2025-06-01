@@ -1,0 +1,43 @@
+D ́eveloppement d'un Perceptron Multicouche (MLP) pour des
+Problèmes Supervis ́es
+04 f ́evrier 2025
+Objectif
+Mettre en œuvre un perceptron multicouche (MLP) pour r ́esoudre trois types de Problèmes supervis ́es :
+1. R ́egression
+2. Classification binaire
+3. Classification multiclasse
+L'objectif est de concevoir une architecture adapt ́ee pour chaque type de problème, d'entraˆıner des
+modèles performants et d' ́evaluer leurs r ́esultats respectifs.
+ ́Etapes du TP
+Choix et Pr ́eparation des Donn ́ees
+S ́election des Jeux de Donn ́ees Analyse Exploratoire Division des Donn ́ees
+Conception du R ́eseau MLP
+— Architecture : D ́efinissez le nombre de couches cach ́ees et de neurones par couche en fonction
+de la complexit ́e de chaque problème.
+— Fonctions d'Activation : Utilisez des fonctions d'activation appropri ́ees pour chaque couche
+.
+— Fonction de Perte : Choisissez une fonction de perte adapt ́ee `a chaque type de problème
+Impl ́ementation et Entraˆınement
+— Optimiseur : S ́electionnez un optimiseur pour chaque modèle.
+— R ́etropropagation : Impl ́ementez l'algorithme de r ́etropropagation pour ajuster les poids du
+r ́eseau.
+— R ́egularisation
+0.1
+Evaluation et Visualisation
+—  ́Evaluation des Performances : Utilisez des m ́etriques appropri ́ees pour  ́evaluer les perfor-
+mances de chaque modèle sur les ensembles de validation et de test .
+— Visualisation : Pr ́esentez des graphiques illustrant les performances de chaque modèle,
+1
+
+Rapport Final
+— Notebook Python : Fournissez un notebook contenant toutes les  ́etapes du projet, avec des
+commentaires d ́etaill ́es et des interpr ́etations des r ́esultats pour chaque type de problème.
+— Rapport Synth ́etique (1-2 pages) : R ́edigez un rapport r ́esumant les jeux de donn ́ees choisis,
+les probl ́ematiques, les choix d'architecture, les techniques de r ́egularisation, les r ́esultats obtenus
+et les pistes d'am ́elioration potentielles pour chaque modèle.
+Livrables Attendus
+— Notebook Python : Incluant le code complet et les visualisations pour les trois types de
+Problèmes.
+— Rapport Synth ́etique : Pr ́esentant une analyse critique du travail r ́ealis ́e pour chaque type
+de problème.
+2

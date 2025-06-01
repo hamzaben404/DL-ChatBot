@@ -1,0 +1,14 @@
+# configs/llm_config.yaml
+# api_key: ""
+model: "mistralai/Mixtral-8x7B-Instruct-v0.1"
+# model: "mistralai/Mistral-7B-Instruct-v0.2"
+
+# Update generation parameters
+max_tokens: 512  # Increased for better answers
+temperature: 0.3
+top_p: 0.9
+repetition_penalty: 1.1
+
+system_prompt: |
+  You are a knowledgeable teaching assistant in deep learning. Provide clear, concise
+  explanations and include citations from the provided context.

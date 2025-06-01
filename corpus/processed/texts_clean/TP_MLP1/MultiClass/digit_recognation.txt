@@ -1,0 +1,100 @@
+Step 1: Setup and Data Loading
+
+
+```python
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load MNIST dataset
+(X_train, y_train), (X_test, y_test) = keras.datasets.mnist.load_data()
+
+# Normalize pixel values to [0, 1]
+X_train = X_train / 255.0
+X_test = X_test / 255.0
+
+# Flatten images to 1D vectors (28x28 -> 784)
+X_train = X_train.reshape(-1, 784)
+X_test = X_test.reshape(-1, 784)
+
+# Convert labels to one-hot encoding
+y_train = keras.utils.to_categorical(y_train, 10)
+y_test = keras.utils.to_categorical(y_test, 10)
+
+# Split training into train and validation sets
+from sklearn.model_selection import train_test_split
+X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=42)
+```
+
+Step 2: Model Architecture
+
+
+```python
+model = keras.Sequential([
+    keras.layers.Dense(128, activation='relu', input_shape=(784,), kernel_regularizer=keras.regularizers.l2(0.001)),
+    keras.layers.Dropout(0.3),
+    keras.layers.Dense(64, activation='relu', kernel_regularizer=keras.regularizers.l2(0.001)),
+    keras.layers.Dropout(0.3),
+    keras.layers.Dense(10, activation='softmax')
+])
+
+model.compile(
+    optimizer='adam',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
+```
+
+Step 3: Training
+
+
+
+```python
+history = model.fit(
+    X_train, y_train,
+    epochs=30,
+    batch_size=64,
+    validation_data=(X_val, y_val),
+    callbacks=[keras.callbacks.EarlyStopping(patience=3, restore_best_weights=True)]
+)
+```
+
+Step 4: Evaluation
+
+
+```python
+# Test set evaluation
+test_loss, test_acc = model.evaluate(X_test, y_test)
+print(f"Test Accuracy: {test_acc:.4f}")
+
+# Plot training curves
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 2, 1)
+plt.plot(history.history['accuracy'], label='Train Accuracy')
+plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
+plt.title('Accuracy Curves')
+plt.legend()
+
+plt.subplot(1, 2, 2)
+plt.plot(history.history['loss'], label='Train Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.title('Loss Curves')
+plt.legend()
+plt.show()
+
+# Confusion Matrix
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+
+y_pred = model.predict(X_test)
+y_pred_classes = np.argmax(y_pred, axis=1)
+y_true = np.argmax(y_test, axis=1)
+
+cm = confusion_matrix(y_true, y_pred_classes)
+plt.figure(figsize=(10, 8))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+plt.xlabel('Predicted')
+plt.ylabel('True')
+plt.show()
+```

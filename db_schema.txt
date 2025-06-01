@@ -1,0 +1,18 @@
+CREATE TABLE master_metadata (
+	passage_id TEXT, 
+	passage_source TEXT, 
+	section TEXT, 
+	content TEXT, 
+	content_type TEXT, 
+	token_count BIGINT, 
+	line_start BIGINT, 
+	line_end BIGINT, 
+	passage_file TEXT, 
+	doc_id TEXT, 
+	doc_filename TEXT, 
+	doc_type TEXT, 
+	doc_source TEXT, 
+	doc_date TEXT, 
+	doc_notes FLOAT, 
+	processed_date TEXT
+);

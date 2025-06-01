@@ -1,0 +1,642 @@
+Deep Learning Apprentissage
+Apprentissage neuronal profond 2IA,
+ENSIAS
+Pr.Raddouane chiheb
+Mme.hanaa EL Afia
+
+Partie 1: Multi-Layer Perceptron
+(MLP)
+Deep Learning Apprentissage
+2
+
+Plan
+• Introduction aux Réseaux de Neurones
+• Le Perceptron Simple
+• Le Perceptron Multicouche (MLP)
+• Apprentissage et Optimisation
+• Évaluation et Performances du MLP
+Deep Learning Apprentissage
+3
+
+Introduction aux Réseaux de Neurones
+Un réseau de neurones artificiels est composé de
+neurones artificiels organisés en couches :
+• Couche d'entrée : reçoit les données initiales.
+• Couches cachées : traitent les informations en
+appliquant des transformations linéaires et non
+linéaires.
+• Couche de sortie : fournit le résultat final du
+modèle.
+Chaque neurone effectue une combinaison linéaire
+de ses entrées, pondérée par des poids, à laquelle
+s'ajoute un biais. Cette somme est ensuite passée à
+travers une fonction d'activation pour introduire de
+la non-linéarité, permettant au réseau de modéliser
+des relations complexes.
+Définition des Réseaux de Neurones:
+Deep Learning Apprentissage
+4
+
+Différences entre les Réseaux Biologiques et Artificiels
+Bien que les RNA s'inspirent des réseaux neuronaux biologiques, plusieurs différences
+notables existent :
+• Complexité : Les réseaux biologiques sont immensément plus complexes, avec des
+milliards de neurones interconnectés, tandis que les RNA sont constitués de quelques
+centaines à des millions de neurones artificiels.
+• Fonctionnement : Les neurones biologiques communiquent via des signaux
+électrochimiques, alors que les neurones artificiels utilisent des opérations
+mathématiques pour traiter les informations.
+• Apprentissage : Les réseaux biologiques apprennent de manière adaptative et
+continue, tandis que les RNA nécessitent des processus d'entraînement spécifiques
+avec des ensembles de données étiquetées.
+Deep Learning Apprentissage
+5
+
+Applications et Enjeux des Réseaux de Neurones:
+Les RNA ont révolutionné de nombreux domaines grâce à leur capacité à modéliser des
+relations complexes :
+• Reconnaissance d'images : Identification d'objets, de visages et de scènes.
+• Traitement du langage naturel : Traduction automatique, analyse de sentiments.
+• Santé : Diagnostic assisté par ordinateur, analyse d'images médicales.
+• Finance : Prévision des marchés, détection de fraudes.
+Cependant, leur utilisation soulève des enjeux importants :
+• Interprétabilité : Les modèles complexes sont souvent perçus comme des "boîtes
+noires", rendant difficile l'explication de leurs décisions.
+• Dépendance aux données : Les RNA nécessitent de grandes quantités de données
+pour un entraînement efficace.
+• Consommation énergétique : L'entraînement de modèles de grande taille peut
+être énergivore.
+Deep Learning Apprentissage
+6
+
+Le Perceptron Simple
+Structure d'un neurone artificiel
+Le perceptron simple est un modèle de neurone artificiel qui classe une
+entrée en deux catégories. Voici la structure de ce neurone.
+• Entrées (x) : Données introduites dans le neurone, représentant les
+caractéristiques de l'exemple à classer.
+• Poids (w) : chaque entrée est associée à un poids qui détermine
+l'importance de cette entrée dans le calcul de la sortie. Les poids sont
+ajustés lors de l'entraînement pour minimiser l'erreur.
+• Biais (b) : Paramètre permettant d'ajuster le modèle
+• Somme pondérée :Le neurone calcule la somme des entrées pondérées
+par leurs poids
+z= ෍
+i=1
+n
+wixi+ b
+• Fonction d′activation (f) : Introduit une non-linéarité et détermine
+si le neurone doit être activé ou non
+Deep Learning Apprentissage
+7
+
+Algorithme d'Apprentissage du Perceptron
+Principe de Fonctionnement
+1.Initialisation des poids et du biais.
+2.Propagation avant : calcul de la prédiction.
+3.Mise à jour des poids si la prédiction est incorrecte.
+4.Répéter  jusqu'à convergence ou atteindre un nombre maximal d'itérations.
+Deep Learning Apprentissage
+8
+
+Algorithme d'Apprentissage du Perceptron
+Entrées :
+• X= [x1, x2 , ... ... , xn]: données d'entrée.
+• Y= [y1, y2 , ... ... , ym]: étiquettes y∈{−1,1}
+• η: taux d'apprentissage (0 < η≤1).
+• N : nombre d'itérations.
+Initialisation :
+• Poids W= [w1, w2 , ... ... , wn]: initialisés à 0 ou des valeurs aléatoires.
+• Biais b= 0.
+Deep Learning Apprentissage
+9
+
+Étapes de l'Algorithme:
+Pour t= 1 à N (nombre d'itérations) :
+Pour chaque paire (xi, yi)dans (X, Y) :
+1. Calcul de la sortie :
+                               z= W. xi+ b
+                              ොy= ൜1
+si z≥0
+−1
+si z< 0
+2.    Mise à jour des poids et biais
+• Si  ​ ෝyi≠ yi(mauvaise prédiction) :
+W= W+ η⋅yi⋅xi
+b = b+ η⋅yi
+• Sinon : ne rien changer.
+3.    Vérifier la convergence : si toutes les prédictions sont correctes, arrêter.
+Deep Learning Apprentissage
+10
+
+Sortie :
+• Les poids W et le biais b correctement ajustés.
+• Un modèle capable de séparer les données linéairement
+Deep Learning Apprentissage
+11
+
+Limites du Perceptron Simple : Problème de Non-linéarité
+Le perceptron simple ne peut pas résoudre des problèmes qui ne sont pas linéairement
+séparables. Cela signifie qu'un perceptron simple ne pourra pas apprendre des modèles
+complexes où les classes ne peuvent pas être séparées par une seule droite ou hyperplan.
+Exemple classique : le problème XOR:
+Entrée x1
+Entrée x2
+Sortie y
+0
+0
+1
+0
+1
+0
+1
+0
+0
+1
+1
+1
+On ne peut pas avoir une
+séparation linéaire
+Deep Learning Apprentissage
+12
+
+Le Perceptron Multicouche (MLP)
+Architecture du MLP
+Le Perceptron Multicouche (MLP) est un réseau de neurones supervisé composé de
+plusieurs couches entièrement connectées. Il est structuré en trois types de couches:
+Couche d'entrée (Input Layer):
+• Elle reçoit directement les données brutes.
+• Chaque neurone de cette couche représente une caractéristique ou variable d'entrée:
+• Exemple (Tabulaire) : 5 variables → 5 neurones.
+• Exemple (Image) : Image 28×28 pixels → 784 neurones.
+• Formule:
+A0 = X= (x1, x2 , ... ... , xn)
+Xest le vecteur d'entrée.
+Deep Learning Apprentissage
+13
+
+Couches cachées (Hidden Layers):
+• Ce sont les couches intermédiaires qui effectuent des transformations
+complexes sur les données.
+• Chaque neurone d'une couche cachée reçoit les sorties de tous les neurones de
+la couche précédente
+• Le nombre de couches cachées et de neurones par couche détermine la
+profondeur et la capacité d'apprentissage du réseau.
+• Formule:
+Z(l) = W(l)A(l−1) + bl
+Al= fzl
+Deep Learning Apprentissage
+14
+
+Couche de sortie (Output Layer):
+• Produit la prédiction finale.
+• Nombre de neurones : Dépend du problème.
+• Classification binaire → 1 neurone (Sigmoïde).
+• Classification multiclasse → K neurones (Softmax).
+• Régression → 1 neurone (sans activation ou ReLU).
+Z(l) = W(l)A(l−1) + bl
+෠Y= fzl
+Deep Learning Apprentissage
+15
+
+Propagation Avant (Forward Propagation) dans un MLP
+La Propagation Avant est le processus par lequel une entrée traverse le réseau
+pour produire une sortie. Chaque neurone applique une transformation affine
+suivie d'une fonction d'activation non linéaire.
+Étape 1 : Calcul de la Combinaison Linéaire:
+Pour chaque couche l∈{1,2, ... , L} ,on calcule la somme pondérée des activations
+de la couche précédente :
+Z(l) = W(l)A(l−1) + bl
+Étape 2 : Application de la Fonction d'Activation:
+La sortie du neurone est obtenue en appliquant la fonction d'activation :
+Al= fzl
+Deep Learning Apprentissage
+16
+
+Étape 3 : Calcul de la Sortie
+À la couche de sortie (l=L), on applique la dernière transformation :
+෠Y= fW(l)A(l−1) + bl
+La Propagation Avant suit ces étapes :
+1. Combinaison linéaire : somme pondérée des entrées.
+2. Non-linéarité : activation avec f(z).
+3. Propagation de couche en couche jusqu'à la sortie.
+Ce processus transforme les entrées en sorties prédictives à travers des transformations
+successives.
+Deep Learning Apprentissage
+17
+
+Deep Learning Apprentissage
+18
+
+Fonctions d'Activation
+Les fonctions d'activation jouent un rôle essentiel dans les réseaux de neurones
+artificiels, en particulier dans les Perceptrons Multicouches (MLP). Elles permettent au
+réseau de modéliser des relations complexes et non linéaires.
+Principaux Rôles des Fonctions d'Activation:
+• Introduire de la Non-linéarité
+• Adapter la Sortie aux Problèmes Spécifiques
+• Optimiser la Convergence de l'Apprentissage
+• Considérations sur le Temps de Calcul
+Deep Learning Apprentissage
+19
+
+Fonction d'Activation Sigmoïde:
+La fonction sigmoïde est une fonction d'activation classique utilisée dans les réseaux
+de neurones, surtout pour la classification binaire. Elle permet de transformer toute
+valeur réelle en un nombre compris entre 0 et 1, ce qui la rend idéale pour prédire
+des probabilités.
+Deep Learning Apprentissage
+20
+
+Exemple:
+Imaginons un modèle de réseau de neurones qui doit prédire si un email est un spam (classe 1) ou
+non-spam (classe 0). Le modèle reçoit une entrée X (qui pourrait être, par exemple, un ensemble
+de caractéristiques extraites du contenu de l'email, comme la fréquence de certains mots, la
+longueur de l'email, etc.).
+Considérons :
+• Poids W= [1.2, −0.8]
+• Biais b= 0.5
+• Entrée X= [2,3]
+Étape 1 : Calcul de la somme pondérée:
+z= (1.2 × 2) + (−0.8 × 3) + 0.5 = 2.4 −2.4 + 0.5 = 0.5
+Étape 2 : Application de la fonction sigmoïde
+σ(0.5) ≈0.622
+La sortie du neurone, après avoir appliqué la fonction sigmoïde, est environ 0.621. Cela signifie
+que, selon le modèle, la probabilité que que l'email soit un spam est d'environ 62.1%.
+Deep Learning Apprentissage
+21
+
+Fonction d'Activation Tanh (Tangente Hyperbolique):
+La fonction Tanh (ou tangente hyperbolique) est une amélioration de la fonction
+sigmoïde. Contrairement à la sigmoïde qui génère des sorties entre 0 et 1, la fonction
+Tanh produit des sorties entre -1 et 1, ce qui la rend plus adaptée pour des données
+centrées autour de zéro.
+Deep Learning Apprentissage
+22
+
+Exemple:
+Considérons :
+• Poids W= [0.5, −1]
+• Biais b= 0.2
+• Entrée X= [1,2]
+Étape 1 : Calcul de la somme pondérée:
+z= 0.5 × 2 + −1 × 3 + 0.2 = −1.3.
+Étape 2 : Application de la fonction  Tanh
+tanh −1.3 ≈−0.861
+La sortie du neurone est −0. 861, ce qui indique une forte appartenance à la classe
+négative.
+Deep Learning Apprentissage
+23
+
+Fonction d'Activation ReLU:
+La ReLU est aujourd'hui l'une des fonctions d'activation les plus utilisées dans les
+réseaux de neurones, notamment pour les réseaux profonds. Elle est simple, rapide à
+calculer et efficace pour résoudre le problème du gradient qui disparaît.
+Deep Learning Apprentissage
+24
+
+Fonction d'Activation Softmax
+La Softmax est une fonction d'activation utilisée principalement dans la couche de
+sortie des réseaux de neurones pour les problèmes de classification multiclasse. Elle
+transforme un vecteur de valeurs réelles en un vecteur de probabilités dont la
+somme est égale à 1.
+Deep Learning Apprentissage
+25
+
+Apprentissage et Optimisation
+Fonction de Perte (Loss Function)
+Définition :
+La fonction de perte mesure l'écart entre la prédiction du modèle ොy et la valeur réelle
+y pour chaque observation individuelle. Son objectif est de quantifier l'erreur commise
+afin de guider l'apprentissage du modèle.
+Rôle et Importance de la Fonction de Perte:
+• Mesure de la Performance du Modèle
+• Guide l'Optimisation du Modèle
+• Influence sur la Vitesse et la Qualité de l'Apprentissage
+Deep Learning Apprentissage
+26
+
+Types de Fonctions de Perte selon les Problèmes
+Régression (Problème de Prédiction Continue avec l'Erreur Quadratique Moyenne (MSE)):
+L'Erreur Quadratique Moyenne (MSE) est une fonction de perte couramment utilisée pour
+les problèmes de régression. Elle mesure la moyenne des carrés des écarts entre les valeurs
+prédites et les valeurs réelles, pénalisant fortement les grandes erreurs, Sa formule est la
+suivante:
+Lොy, y= (ොy−y)2
+• y: Valeur réelle
+• ොy:Valeur prédite par le modèle
+• n:Nombre d'exemples dans le jeu de données
+Deep Learning Apprentissage
+27
+
+Exemple : Prédiction du Prix des Maisons
+Imaginons que nous essayons de prédire le prix d'une maison en fonction de ses
+caractéristiques, comme la surface en mètres carrés. Ce problème de régression vise à
+prédire une valeur continue (prix de la maison) à partir de certaines données d'entrée
+MSE=100 000 000
+Erreur Quadratique Moyenne (MSE) est de 100000,000, ce qui signifie qu'en moyenne,
+chaque prédiction de prix est déviée de 10000 € par rapport à la réalité (en termes
+absolus).
+Surface (m2)
+Prix réel (en €)
+Prix prédit (en €)
+80
+250000
+240000
+100
+300000
+310000
+120
+350000
+340000
+150
+450000
+440000
+Deep Learning Apprentissage
+28
+
+Classification Binaire (Entropie Croisée Binaire (Binary Cross-Entropy))
+L'entropie croisée binaire est utilisée lorsque le problème de classification comporte deux
+classes (0 ou 1).
+Formule:
+Lොy, y= −(y. log ොy+ (1 −y) log(1 −ොy))
+• y : Étiquette réelle (0 ou 1)
+• ොy :probabilité prédite que l'échantillon appartienne à la classe 1
+Plus la prédiction est proche de la vérité, plus la perte est faible.
+Deep Learning Apprentissage
+29
+
+Exemple : Détection de Spam
+Analyse :
+• Email A : Bonne prédiction → Perte faible
+• Email B : Mauvaise prédiction → Perte élevée
+• Email C : Mauvaise prédiction → Perte élevée
+• Email D : Bonne prédiction → Perte faible
+Email
+Vraie Classe
+Probabilité prédite
+Perte (BCE)
+A
+spam
+0.9
+0.105
+B
+spam
+0.1
+2.302
+C
+Non spam
+0.8
+1.609
+D
+Non spam
+0.05
+0.051
+Deep Learning Apprentissage
+30
+
+Classification Multiclasse Entropie Croisée Catégorique (Categorical Cross-Entropy)
+Utilisée pour les problèmes où il y a plus de deux classes. Elle compare un vecteur one-hot
+des vraies classes avec les probabilités prédites.
+ Formule:
+Lොy, y= −෍
+j=1
+C
+yj. log ෝyj
+• y : Étiquette réelle
+• ොy :probabilité prédite pour classe j
+• C: nombre de classe
+Explication:
+• One-hot encoding est utilisé pour y
+• Seule la probabilité de la classe correcte impacte la perte.
+Deep Learning Apprentissage
+31
+
+Exemple : Reconnaissance de Chiffres (0 à 9):
+Un modèle doit prédire le chiffre représenté par cette image:
+Calcul de la Perte :
+Lොy, y= 0.511
+Le modèle prédit la classe 2 avec 60% de probabilité → Perte modérée.
+Classe
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+y
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+ොy
+0.01
+0.05
+0.6
+0.1
+0.05
+0.04
+0.03
+0.06
+0.03
+0.03
+Deep Learning Apprentissage
+32
+
+L'algorithme de rétropropagation est un élément fondamental dans l'entraînement des
+réseaux de neurones multicouches (MLP). Il permet de calculer efficacement les
+gradients de la fonction de perte par rapport aux poids et biais du réseau, afin de les
+mettre à jour et améliorer les performances du modèle.
+Principe de la Rétropropagation:
+L'objectif est de minimiser la fonction de perte en ajustant les poids W et les biais b du
+réseau
+Deux grandes étapes :
+1. Propagation avant (Forward Pass) :
+ Calcul des sorties du réseau pour une entrée donnée.
+2. Propagation arrière (Backward Pass) :
+       Calcul des gradients de la fonction de perte par rapport aux poids et biais
+Algorithme de Rétropropagation (Backpropagation)
+Deep Learning Apprentissage
+33
+
+Étapes de la Rétropropagation:
+Étape 1 :Erreur de la couche de sortie
+ On calcule l'erreur entre la sortie prédite ොy  ​et la sortie réelle y
+δL= ∂L
+∂zl= (AL−y) ⊙f′(zl)
+Étape 2 Erreur des couches cachées:
+δl = (W(l+1)Tδl+1) ⊙f′(zl)
+Étape 3: Calcul des gradients
+∂L
+∂Wl= δlAl−1 T
+∂L
+∂bl= δl
+Étape 4 Mise à Jour des Poids et Biais
+Wl= Wl−η∂L
+∂Wl
+
+bl= bl−η∂L
+∂bl
+Deep Learning Apprentissage
+34
+
+Points Clés:
+•La propagation avant calcule la sortie du réseau.
+•La propagation arrière calcule comment ajuster les poids pour réduire l'erreur.
+•La descente de gradient met à jour les paramètres pour améliorer les performances.
+•L'efficacité de la rétropropagation dépend du choix des fonctions d'activation et du taux
+d'apprentissage.
+Deep Learning Apprentissage
+35
+
+L'optimisation consiste à ajuster les poids et les biais d'un réseau de neurones pour minimiser
+la fonction de perte . Cela permet au modèle d'améliorer ses prédictions
+Gradient Descent:
+Principe :
+ Met à jour les paramètres dans la direction opposée au gradient de la fonction de perte.
+Formule :
+• θ: Poids et biais.
+• η: Taux d'apprentissage (learning rate).
+• ∇ θLθ: Gradient de la perte.
+Optimisation
+Deep Learning Apprentissage
+36
+
+Variantes :
+• Batch Gradient Descent : Calcul avec tout le dataset.
+• Stochastic Gradient Descent (SGD) : Mise à jour à chaque exemple.
+• Mini-Batch Gradient Descent : Mise à jour par petit lot d'exemples.
+ Algorithmes Avancés
+• Momentum : Accélère la convergence en ajoutant un terme de vitesse.
+• RMSProp : Ajuste le taux d'apprentissage pour chaque paramètre.
+• Adam : Combine Momentum et RMSProp, adaptatif et rapide.
+Deep Learning Apprentissage
+37
+
+Objectif:
+La régularisation est une technique utilisée pour réduire le surapprentissage (overfitting) et
+améliorer la capacité du modèle à se généraliser sur des données non vues. En ajoutant une
+pénalité aux poids du modèle, elle aide à éviter qu'il ne s'adapte trop précisément aux
+données d'entraînement, y compris leur bruit.
+Problème du Surapprentissage:
+Le surapprentissage survient lorsque le modèle s'adapte trop précisément aux données
+d'entraînement, capturant à la fois les relations sous-jacentes et le bruit présent dans les
+données. Cela conduit à un modèle performant sur les données d'entraînement mais moins
+efficace sur des données nouvelles.
+Symptômes du surapprentissage :
+Très bonne performance sur les données d'entraînement, mais mauvaise performance sur les
+données de test.
+Régularisation
+Deep Learning Apprentissage
+38
+
+Méthodes de Régularisation:
+Les techniques de régularisation agissent principalement en modifiant la fonction de perte
+L(w) ,où w représente les poids du modèle. Voici les principales méthodes de régularisation:
+Régularisation L1 (Lasso):
+Principe :
+Ajout d'une pénalité proportionnelle à la somme des valeurs absolues des poids W.
+Formule de la fonction de perte:
+Lw= Linitialew+ λ෍
+i=1
+n
+wi
+• Linitialew:Fonction de perte sans régularisation
+• λ : Hyperparamètre qui contrôle l'importance de la régularisation.
+Effet :
+• Encourage les poids wi ​ à devenir exactement égaux à zéro, ce qui peut éliminer des
+caractéristiques inutiles.
+• Convient pour des modèles où certaines caractéristiques sont peu informatives (sparse
+models).
+Deep Learning Apprentissage
+39
+
+Régularisation L2 (Ridge):
+Principe :
+Ajout d'une pénalité proportionnelle à la somme des carrés des poids W.
+Formule de la fonction de perte :
+Lw= Linitialew+ λ෍
+i=1
+n
+wi2
+Effet :
+• Réduit les valeurs des poids wi, mais ne les force pas à être nuls.
+• Privilégie un modèle plus stable en limitant les poids extrêmes, ce qui améliore la
+généralisation.
+Deep Learning Apprentissage
+40
+
+Dropout:
+Principe :
+Pendant l'entraînement, désactiver aléatoirement une fraction des neurones à chaque
+itération pour réduire la dépendance du modèle à des combinaisons spécifiques de
+neurones.
+Formule conceptuelle :
+hi
+dropout= hi. ri ri∼Bernoulli(p)
+hi : Activation du neurone i.
+ri : Masque binaire (0 ou 1) généré aléatoirement avec une probabilité p de garder le
+neurone actif.
+Effet :
+• Force le modèle à apprendre des représentations redondantes et plus robustes.
+• Réduit le surapprentissage dans les réseaux profonds.
+Deep Learning Apprentissage
+41
+
+Early Stopping
+Principe :
+Arrêter l'entraînement lorsque la performance sur les données de validation cesse
+de   s'améliorer.
+Procédure :
+• Suivre l'évolution de la fonction de perte sur les données de validation.
+• Interrompre l'entraînement lorsque la perte de validation commence à
+augmenter, ce qui indique un surapprentissage.
+Effet :
+• Empêche le modèle de s'adapter trop aux données d'entraînement.
+Deep Learning Apprentissage
+42
+
+Évaluation et Performances
+Pour évaluer un MLP, on utilise des métriques adaptées aux tâches :
+Régression :
+• MAE (Erreur Absolue Moyenne)
+• R2 (Coefficient de Détermination)
+Classification Binaire :
+Précision, Rappel et F1-Score :
+Exemples des formules pour la classe positive (y= 1)
+Classification Multiclasse :
+Exactitude (Accuracy) :
+Mesures de Performance
+Deep Learning Apprentissage
+43
+
+1.Régularisation
+2.Dropout
+3.Early Stopping
+4.Augmentation des Données
+
+5.Réduction de la Complexité du Modèle
+6.Hyperparamètres
+Solution de Surapprentissage
+Deep Learning Apprentissage
+44
+
+• Taille et Nombre des Couches Cachées
+• Fonction d'Activation
+• Taux d'Apprentissage (Learning Rate)
+• Taille de Batch (Batch Size)
+• Nombre d'Époques
+• Méthode de Régularisation
+Hyperparamètres
+Deep Learning Apprentissage
+45

@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# Data directories (if using LFS)
+corpus/processed/embeddings/
+corpus/processed/indexes/
+
+# Virtual environments
+env/
+.venv/

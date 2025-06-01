@@ -1,0 +1,39 @@
+# configs/sample_queries.yaml
+
+- id: Q1
+  question: "What is backpropagation in a multilayer perceptron?"
+  expected_topics:
+    - backpropagation
+    - MLP
+    - gradient
+
+- id: Q2
+  question: "How do you initialize weights and biases in an MLP?"
+  expected_topics:
+    - weight initialization
+    - bias
+    - random
+
+- id: Q3
+  question: "Explain the forward pass in a neural network."
+  expected_topics:
+    - forward pass
+    - activation
+
+- id: Q4
+  question: "What is the role of the sigmoid activation function?"
+  expected_topics:
+    - sigmoid
+    - activation function
+
+- id: Q5
+  question: "How is Mean Squared Error computed?"
+  expected_topics:
+    - MSE
+    - loss function
+
+- id: Q6
+  question: "Describe gradient descent for training neural networks."
+  expected_topics:
+    - gradient descent
+    - optimization

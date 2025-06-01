@@ -1,0 +1,11 @@
+doc_id,filename,type,source,date,notes
+Td1_correction,Td1_correction.pdf,pdf,tutorial,2025-05-04,
+DeepLearning1,DeepLearning1.pdf,pdf,lecture,2025-05-04,
+TP1,TP1.pdf,pdf,assignment,2025-05-04,
+TD1,TD1.pdf,pdf,tutorial,2025-05-04,
+DetectionFaussesNouvelles,TP_MLP1/BinaryCalss/DetectionFaussesNouvelles.pdf,pdf,lecture,2025-02-09,
+fakeNews,TP_MLP1/BinaryCalss/fakeNews.ipynb,ipynb,lecture,2025-02-09,
+Salary,TP_MLP1/Regression/Salary.ipynb,ipynb,lecture,2025-02-09,
+RegressioEsperanceVie_MLP,TP_MLP1/Regression/RegressioEsperanceVie_MLP.pdf,pdf,lecture,2025-02-09,
+digit_recognation,TP_MLP1/MultiClass/digit_recognation.ipynb,ipynb,lecture,2025-02-09,
+MLP_MNIST,TP_MLP1/MultiClass/MLP_MNIST.pdf,pdf,lecture,2025-02-09,

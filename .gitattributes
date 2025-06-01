@@ -1,0 +1,6 @@
+corpus/processed/passages/**/*.jsonl filter=lfs diff=lfs merge=lfs -text
+corpus/processed/embeddings/*.npy filter=lfs diff=lfs merge=lfs -text
+corpus/processed/indexes/* filter=lfs diff=lfs merge=lfs -text
+corpus/processed/master_metadata.csv filter=lfs diff=lfs merge=lfs -text
+corpus/processed/master_metadata.parquet filter=lfs diff=lfs merge=lfs -text
+corpus/processed/master_metadata.sqlite filter=lfs diff=lfs merge=lfs -text
